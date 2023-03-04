@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.scss";
 
 function Signin() {
+  const navigate = useNavigate();
+
+  const redirectToRegister = () => {
+    navigate('/register')
+  }
+
   return (
     <div className="signin-container">
       <form className="form">
@@ -34,6 +41,9 @@ function Signin() {
           </div>
         </div>
         <button className="submit--btn">Login</button>
+        <div className="register">
+          <span>You don't have an account? </span> <span onClick={redirectToRegister} >Register</span>
+        </div>
         <div className="separator">
           <hr className="line" />
           <p>or</p>
